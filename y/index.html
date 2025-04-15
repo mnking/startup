@@ -3,69 +3,450 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chuyên bán nước mắm Phan Thiết chất lượng cao, hương vị truyền thống.">
-    <title>Bán Nước Mắm Phan Thiết</title>
+    <title>Nước Mắm Phan Thiết - Tinh Túy Hương Vị Việt</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        :root {
+            --primary-color: #d9480f;
+            --secondary-color: #ffa94d;
+            --accent-color: #fff3bf;
+            --dark-color: #212529;
+            --light-color: #f8f9fa;
+        }
+        
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
             line-height: 1.6;
         }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
         header {
-            background: #f4a261;
+            background-color: var(--primary-color);
             color: white;
-            padding: 1rem 0;
+            padding: 20px 0;
             text-align: center;
         }
-        section {
-            padding: 2rem;
-            max-width: 800px;
-            margin: auto;
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
         }
-        .cta {
-            text-align: center;
-            margin-top: 2rem;
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
         }
-        .cta a {
-            background: #2a9d8f;
+        
+        .menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .menu li {
+            margin-left: 20px;
+        }
+        
+        .menu a {
             color: white;
-            padding: 0.8rem 1.5rem;
             text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .hero {
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .features {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 36px;
+            color: var(--primary-color);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-item {
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .products {
+            padding: 80px 0;
+            background-color: var(--accent-color);
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #f0f0f0;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .product-price {
+            font-size: 18px;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .about {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            background-color: #f0f0f0;
+        }
+        
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--accent-color);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-item {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+        }
+        
+        .contact {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
             border-radius: 5px;
         }
-        .cta a:hover {
-            background: #21867a;
-        }
+        
         footer {
-            background: #264653;
+            background-color: var(--dark-color);
             color: white;
+            padding: 50px 0 20px;
             text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .footer-links li {
+            margin: 0 15px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #aaa;
+        }
+        
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .menu {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Bán Nước Mắm Phan Thiết</h1>
-        <p>Hương vị truyền thống, chất lượng đỉnh cao</p>
+        <div class="container">
+            <div class="nav">
+                <div class="logo">Nước Mắm Phan Thiết</div>
+                <ul class="menu">
+                    <li><a href="#features">Đặc Điểm</a></li>
+                    <li><a href="#products">Sản Phẩm</a></li>
+                    <li><a href="#about">Về Chúng Tôi</a></li>
+                    <li><a href="#contact">Liên Hệ</a></li>
+                </ul>
+            </div>
+        </div>
     </header>
-    <section>
-        <h2>Giới thiệu</h2>
-        <p>Nước mắm Phan Thiết là một đặc sản nổi tiếng với hương vị đậm đà, được làm từ cá cơm tươi ngon và muối biển tự nhiên. Chúng tôi cam kết mang đến cho bạn sản phẩm nước mắm chất lượng cao, an toàn và thơm ngon nhất.</p>
-        <h2>Sản phẩm của chúng tôi</h2>
-        <ul>
-            <li>Nước mắm nguyên chất 40 độ đạm</li>
-            <li>Nước mắm gia vị cho nấu ăn</li>
-            <li>Nước mắm đặc biệt dành cho chấm</li>
-        </ul>
-        <div class="cta">
-            <a href="#contact">Liên hệ ngay</a>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Nước Mắm Phan Thiết</h1>
+            <p>Tinh hoa ẩm thực Việt Nam từ vùng biển Phan Thiết</p>
+            <a href="#products" class="btn">Mua Ngay</a>
         </div>
     </section>
+    
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Đặc Điểm Nổi Bật</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">★</div>
+                    <h3 class="feature-title">Truyền Thống</h3>
+                    <p>Được sản xuất theo phương pháp truyền thống hơn 200 năm, giữ trọn hương vị đậm đà.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">★</div>
+                    <h3 class="feature-title">Tự Nhiên 100%</h3>
+                    <p>Không chất bảo quản, không phẩm màu, chỉ từ cá cơm tươi và muối hạt tinh khiết.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">★</div>
+                    <h3 class="feature-title">Đạm Cao</h3>
+                    <p>Hàm lượng đạm từ 30N đến 40N, đảm bảo chất lượng và dinh dưỡng.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">Sản Phẩm Của Chúng Tôi</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="/api/placeholder/400/320" alt="Nước mắm cốt 40N" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-title">Nước Mắm Cốt 40N</h3>
+                        <div class="product-price">150.000đ</div>
+                        <p>Nước mắm cốt hảo hạng, đậm đà hương vị, thích hợp cho các món ăn truyền thống.</p>
+                        <a href="#" class="btn">Thêm Vào Giỏ</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="/api/placeholder/400/320" alt="Nước mắm truyền thống 35N" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-title">Nước Mắm Truyền Thống 35N</h3>
+                        <div class="product-price">120.000đ</div>
+                        <p>Nước mắm truyền thống, vị cân bằng, phù hợp cho nấu nướng và chấm hàng ngày.</p>
+                        <a href="#" class="btn">Thêm Vào Giỏ</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="/api/placeholder/400/320" alt="Nước mắm nhĩ 30N" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-title">Nước Mắm Nhĩ 30N</h3>
+                        <div class="product-price">100.000đ</div>
+                        <p>Nước mắm nhĩ nguyên chất, hương vị dịu nhẹ, thích hợp cho mọi món ăn.</p>
+                        <a href="#" class="btn">Thêm Vào Giỏ</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="/api/placeholder/400/320" alt="Bộ quà tặng nước mắm" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-title">Bộ Quà Tặng Nước Mắm</h3>
+                        <div class="product-price">350.000đ</div>
+                        <p>Bộ quà tặng sang trọng gồm 3 loại nước mắm cao cấp, là món quà ý nghĩa.</p>
+                        <a href="#" class="btn">Thêm Vào Giỏ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">Về Chúng Tôi</h2>
+            <div class="about-content">
+                <img src="/api/placeholder/400/320" alt="Làng chài Phan Thiết" class="about-img">
+                <div>
+                    <h3>Truyền Thống Từ Làng Chài Phan Thiết</h3>
+                    <p>Nước mắm Phan Thiết được sản xuất theo phương pháp truyền thống từ làng chài Phan Thiết, tỉnh Bình Thuận. Với hơn 200 năm lịch sử, nước mắm Phan Thiết đã trở thành một biểu tượng của ẩm thực Việt Nam.</p>
+                    <p>Chúng tôi tự hào là đơn vị sản xuất và phân phối nước mắm Phan Thiết chất lượng cao, giữ nguyên hương vị truyền thống, đáp ứng các tiêu chuẩn vệ sinh an toàn thực phẩm hiện đại.</p>
+                    <p>Mỗi giọt nước mắm đều được lên men tự nhiên trong thùng gỗ, không sử dụng chất bảo quản hay phụ gia, đảm bảo hương vị đậm đà và giá trị dinh dưỡng cao.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Khách Hàng Nói Gì</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-item">
+                    <p class="testimonial-text">"Nước mắm Phan Thiết là gia vị không thể thiếu trong bếp của tôi. Hương vị đậm đà, thơm ngon và rất an toàn cho sức khỏe."</p>
+                    <p class="testimonial-author">- Chị Nguyễn Thị Hương, Hà Nội</p>
+                </div>
+                <div class="testimonial-item">
+                    <p class="testimonial-text">"Tôi là đầu bếp chuyên nghiệp và đã sử dụng nhiều loại nước mắm, nhưng nước mắm Phan Thiết vẫn là lựa chọn hàng đầu của tôi cho các món ăn truyền thống."</p>
+                    <p class="testimonial-author">- Anh Trần Văn Nam, Đầu bếp</p>
+                </div>
+                <div class="testimonial-item">
+                    <p class="testimonial-text">"Đã dùng nước mắm Phan Thiết hơn 10 năm và chưa từng thất vọng. Giá thành hợp lý mà chất lượng thì tuyệt vời."</p>
+                    <p class="testimonial-author">- Bà Lê Thị Xuân, TP. Hồ Chí Minh</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Liên Hệ Với Chúng Tôi</h2>
+            <div class="contact-form">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Họ và tên">
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <input type="tel" class="form-control" placeholder="Số điện thoại">
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" rows="5" placeholder="Nội dung"></textarea>
+                </div>
+                <button type="submit" class="btn">Gửi Tin Nhắn</button>
+            </div>
+        </div>
+    </section>
+    
     <footer>
-        <p>&copy; 2023 Bán Nước Mắm Phan Thiết. Tất cả các quyền được bảo lưu.</p>
+        <div class="container">
+            <ul class="footer-links">
+                <li><a href="#">Trang Chủ</a></li>
+                <li><a href="#features">Đặc Điểm</a></li>
+                <li><a href="#products">Sản Phẩm</a></li>
+                <li><a href="#about">Về Chúng Tôi</a></li>
+                <li><a href="#contact">Liên Hệ</a></li>
+            </ul>
+            <div>
+                <p>Địa chỉ: 123 Đường Ngư Ông, Phường Phú Thuỷ, TP. Phan Thiết, Bình Thuận</p>
+                <p>Điện thoại: 0123 456 789 | Email: info@nuocmamphanthiet.com</p>
+            </div>
+            <p class="copyright">© 2025 Nước Mắm Phan Thiết. Tất cả quyền được bảo lưu.</p>
+        </div>
     </footer>
 </body>
 </html>
